@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
         res.end('bullshit')
       }
       res.setHeader('Content-Type', 'text/css')
-      res.statusCode = 203
+      res.statusCode = 200
       res.write(data)
       res.end()
     })
