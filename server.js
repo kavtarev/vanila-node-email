@@ -1,6 +1,8 @@
+require('dotenv').config()
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
+const PORT = process.env.PORT || 4000
 const server = http.createServer((req, res) => {
   let headerType
   let fileName = req.url !== '/' ? req.url : 'index.html'
@@ -50,6 +52,6 @@ const server = http.createServer((req, res) => {
     })
   }
 })
-server.listen(3000, () => {
-  console.log('server is up onn')
+server.listen(PORT, () => {
+  console.log(`server is up on port: ${PORT}`)
 })
