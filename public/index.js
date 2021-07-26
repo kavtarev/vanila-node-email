@@ -2,11 +2,13 @@ let form = document.forms[0]
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
-  let data = await fetch('/api/email', {
+
+  let result = await fetch('/api/file', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ hui: 'gulag' }),
+
+    body: new FormData(e.target),
   })
-  let res = data.json()
-  console.log(res)
+  let res = await result.json()
+
+  location.href = '/text'
 })
