@@ -3,11 +3,12 @@ let form = document.forms[0]
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
 
-  let result = await fetch('/api/mail', {
+  let result = await fetch('/api/file', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: e.target.email.value }),
+
+    body: new FormData(e.target),
   })
   let res = await result.json()
-  console.log(res)
+
+  location.href = '/text'
 })

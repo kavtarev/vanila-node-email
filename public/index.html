@@ -11,9 +11,16 @@
     <a href="/text">to text</a>
     <a href="/">to main</a>
     <h1>your email</h1>
-    <form>
-      <input name="email" type="text" />
-      <button>send your data</button>
+
+    <hr />
+    <br />
+    <form action="/api/file" method="post" enctype="multipart/form-data">
+      
+      <h6>your email</h6>
+      <input type="email" name="email" maxlength="30" />
+      <h6>your file</h6>
+      <input name="textFile" type="file" />
+      <button>send data</button>
     </form>
     <script src="index.js"></script>
   </body>
