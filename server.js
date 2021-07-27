@@ -45,7 +45,7 @@ const server = http.createServer((req, res) => {
               path: newpath,
             }
             sendMail(options).catch(console.error)
-            res.end(JSON.stringify({ localion: 'all good' }))
+            res.end(JSON.stringify({ message: 'all good' }))
           })
         } else {
           res.end(JSON.stringify({ message: 'net tela net dela' }))
